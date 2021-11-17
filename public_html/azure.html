@@ -1,0 +1,94 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IS 218 Tutorial</title>
+
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="IS 218 Tutorial">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="A simple HTML5 Template for new projects.">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body class="background-color">
+
+  <h1 class="text-center heading-padding">How to host a website on Azure Cloud</h1>
+  <div class="text-center">
+    <a href="index.html"><img src="images/github.png" class="mx-auto github-logo" alt="..."></a>
+    <a href="apache.html"><img src="images/apache.png" class="mx-auto logo-size" alt="..."></a>
+    <a href="docker.html"><img src="images/docker.png" class="mx-auto logo-size" alt="..."></a>
+    <a href="azure.html"><img src="images/azure.png" class="mx-auto logo-size" alt="..."></a>
+    <a href="command_line.html"><img src="images/terminal_logo.png" class="mx-auto logo-size" alt="..."></a>
+
+  </div>
+
+  <div class="card card-size mx-auto">
+    <div class="card-body">
+      <h2 class="card-title">How to setup a free student Azure account</h2>
+      <ol>
+        <li>You will need a Microsoft Outlook or Hotmail email address and an academic email account to register with the program.</li>
+        <li>If you don’t have a Microsoft account, create one first at <a href="https://signup.live.com/" target="_blank">https://signup.live.com/</a></li>
+        <li>After you’ve created your email address,  go to: <a href="https://azure.microsoft.com/en-us/free/students/ " target="_blank">https://azure.microsoft.com/en-us/free/students/ </a>to join the Azure for Students plan.</li>
+
+      </ol>
+    </div>
+  </div>
+  <br>
+  <div class="card card-size mx-auto">
+    <div class="card-body">
+      <h2 class="card-title">How to create an Azure container</h2>
+      <ol>
+        <li>If you don’t have a Microsoft account, create one first at <a href="https://signup.live.com/">https://signup.live.com/</a></li>
+        <li>After you’ve created your email address,  go to: <a href="https://azure.microsoft.com/en-us/free/students/ ">https://azure.microsoft.com/en-us/free/students/ </a>to join the Azure for Students plan.</li>
+        <li>Run the following command in your terminal to log into Azure: <code>docker login azure</code>. This opens your web browser and prompts you to enter your Azure login credentials. If the Docker CLI cannot open a browser, it will fall back to the Azure device code flow and lets you connect manually.</li>
+        <li>After you have logged in, you need to create a Docker context associated with ACI to deploy containers in ACI. Creating an ACI context requires an Azure subscription, a resource group, and a region. For example, let us create a new context called myacicontext by running <code>docker context create aci myacicontext</code></li>
+        <li>The command above automatically uses your Azure login credentials to identify your subscription IDs and resource groups. You can then interactively select the subscription and group that you would like to use. If you prefer, you can specify these options in the CLI using the following flags: --subscription-id, --resource-group, and --location.</li>
+        <li>Now we will push our Docker image onto Docker Hub.</li>
+      </ol>
+    </div>
+  </div>
+  <br>
+  <div class="card card-size mx-auto">
+    <div class="card-body">
+      <h2 class="card-title">How to push a Docker image onto Docker Hub.</h2>
+      <ol>
+        <li>Sign up for a Docker Hub account at: <a href="https://www.docker.com">https://www.docker.com</a></li>
+        <li>Sign into Docker Hub at <a href="https://hub.docker.com">https://hub.docker.com</a></li>
+        <li>Click the Create Repository button. Make sure the Visibility is Public.</li>
+        <li>Click the Create button!</li>
+        <li>Make sure your image is built. Use the command <code>docker build -t YOUR-IMAGE-NAME .</code> to build the image.</li>
+        <li>Login to the Docker Hub using the command <code>docker login -u YOUR-USER-NAME</code></li>
+        <li>Use the docker tag command to give your image a new name. Be sure to swap out YOUR-USER-NAME with your Docker ID.</li>
+        <code>docker tag YOUR-IMAGE YOUR-USER-NAME/YOUR-DOCKERHUB-REPO-NAME</code>
+        <li>Now use the following command to push. If you don’t specify a tag, Docker will use a tag called latest.</li>
+        <code>docker push YOUR-USER-NAME/YOUR-DOCKERHUB-REPO-NAME</code>
+      </ol>
+    </div>
+  </div>
+  <br>
+  <div class="card card-size mx-auto">
+    <div class="card-body">
+      <h2 class="card-title">Deploying the Docker Image to Azure Cloud</h2>
+      <ol>
+        <li>Run the following command to deploy the Docker Image to Azure:</li>
+        <code>docker --context myacicontext run -p 80:80 -d YOUR-USER-NAME/YOUR-DOCKERHUB-REPO-NAME</code>
+        <li>If everything went well you should be able to see your image running with the command <code>docker --context myacicontext ps</code></li>
+        <li>The result of the ps command will display in column “PORTS” the IP address and port on which the container is running. For example, it may show 52.154.202.35:80->80/tcp, and you can view your website page by browsing http://52.154.202.35.</li>
+        <li>If your webpage does not immediately appear, give Azure a couple of minutes.</li>
+    </div>
+  </div>
+</body>
+</html>
