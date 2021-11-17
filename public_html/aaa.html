@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IS 218 Tutorial</title>
+
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="IS 218 Tutorial">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="A simple HTML5 Template for new projects.">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body class="background-color">
+
+  <h1 class="text-center heading-padding">How to do AAA testing</h1>
+  <div class="text-center">
+    <a href="index.html"><img src="images/github.png" class="mx-auto github-logo" alt="..."></a>
+    <a href="apache.html"><img src="images/apache.png" class="mx-auto logo-size" alt="..."></a>
+    <a href="docker.html"><img src="images/docker.png" class="mx-auto logo-size" alt="..."></a>
+    <a href="azure.html"><img src="images/azure.png" class="mx-auto logo-size" alt="..."></a>
+    <a href="command_line.html"><img src="images/terminal_logo.png" class="mx-auto logo-size" alt="..."></a>
+    <a href="oop_principles.html"><img src="images/calculator.png" class="mx-auto logo-size" alt="..."></a>
+    <a href="separation.html"><img src="images/oop.png" class="mx-auto logo-size" alt="..."></a>
+    <a href="oop.html"><img src="images/oop.png" class="mx-auto logo-size" alt="..."></a>
+    <a href="aaa.html"><img src="images/aaa.png" class="mx-auto logo-size" alt="..."></a>
+  </div>
+
+  <div class="card card-size mx-auto">
+    <div class="card-body">
+      <h2 class="card-title">AAA Testing</h2>
+      <ol>
+        <li>Arrange-Act-Assert is a great way to structure test cases. It prescribes an order of 3 operations/steps.</li>
+        <li>The arrange step sets up the test’s input values. </a></li>
+        <li>The act step prompts the primary function being tested.</li>
+        <li>The assert step verifies that the output of the function is what was expected. </li>
+        <li>To think in technical terms, the AAA testing structure is as follows: <code>assert(act(arrange()));</code> </li>
+        <li>Writing tests is essential to be able to maintain clean and usable code. It is necessary for preventing problems with your code later on. A sufficiently large and complex code base will inevitably contain bugs and issues. Keeping these bugs and issues to a minimum will largely depend on the comprehensiveness of your testing. It will also help when adding new functionality or refactoring your code, making sure you haven’t broken anything you didn’t intend to.</li>
+      </ol>
+    </div>
+  </div>
+  <br>
+  <div class="card card-size mx-auto">
+    <div class="card-body">
+      <h2 class="card-title">Try it out!</h2>
+      <ol>
+        <li>To demonstrate this, we will set up a simple program.</li>
+        <li>First create a file using the command line by typing<code>touch calculator.py</code></a></li>
+        <li>Add the following lines:</li>
+        <img src="images/add.png" ></a>
+        <li>This will the be class function we will be testing.</li>
+        <li>Next create directory called test and cd into it by using <code>mkdir test</code> and <code>cd test</code></li>
+        <li>Create a new file named calculatortest.py using the command line by typing <code>touch calculatortest.py</code></li>
+        <li>Add the following lines:</li>
+        <img src="images/add2.png" ></a>
+        <li>As you can see with the line <code>calc = Calculator()</code> we are arranging an empty calc object, acting on this object by assigning an empty Calculator class and asserting that the empty class's variable is 0</li>
+        <li>Furthurmore, in the text_calculator_add function, the line <code>calc = Calculator()</code> and <code>calc.add_number(1)</code> we are once again arranging an empty calc object, acting on this object by assigning an empty Calculator class and then acting on it again by adding 1 to it. Lastly, we assert that the empty class's variable is 1 since we are adding 1 to 0 as demonstrated earlier.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>
