@@ -37,6 +37,21 @@
 
   <div class="card card-size mx-auto">
     <div class="card-body">
+      <h2 class="card-title">Quick note on Linting and Pylint</h2>
+      <ul>
+        <li>Linting is an essential process and code linters are available across programming languages. In this blog, we will talk specifically about the Python Linter aka Pylint. Pylint checks your code against the norms stated in the styling guide for Python as stated in PEP-8.</li>
+        <li>Pylint is meant to be called from the command line. The usage is <code>pylint [options] modules_or_packages</code></li>
+        <li>It is also possible to analyze Python files, with a few restrictions. The thing to keep in mind is that Pylint will try to convert the file name to a module name, and only be able to process the file if it succeeds.<code>pylint mymodule.py</code> </li>
+        <li>Pylint will display a number of messages as it analyzes the code and it can also be used for displaying some statistics about the number of warnings and errors found in different files. The messages are classified under various categories such as errors and warnings.</li>
+        <li>Last but not least, the code is given an overall mark, based on the number and severity of the warnings and errors</li>
+        <li>Below is an example:</li>
+        
+    </ul>
+    </div>
+  </div>
+
+  <div class="card card-size mx-auto">
+    <div class="card-body">
       <h2 class="card-title">Object Oriented Programming Terms Glossary</h2>
       <ul>
         <li><code>Factory</code>  - A factory method is a creational design pattern, i.e., related to object creation. In Factory pattern, we create objects without exposing the creation logic to the client and the client uses the same common interface to create a new type of object. </li>
