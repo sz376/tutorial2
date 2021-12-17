@@ -42,9 +42,21 @@
     <div class="card-body">
       <h2 class="card-title">Principles of OOP</h2>
       <ul>
-        <li>Encapsulation is the the principle of restricting access to certain data. In the calculator program, the history functionalities are all in its own class. This way any members outside the class cannot access it.</li>
+        <li>Encapsulation is the principle of restricting access to certain data. In the calculator program, the history functionalities are all in its own class. This way any members outside the class cannot access it.</li>
         <img src="images/history.png"></a>
-        <li>As seen above, </li>
+        <li>As seen above, no other class in the project has access to these methods unless they inherit directly from the history class.</li>
+        <li>Inheritance is the principle of defining a class that "borrows" the methods from another class. A real life example would be, if we were to write a "Kitchen" class and want to be able to head up food in the class, we would need to create or import a microwave object and inherit the method to heat food from the "Microwave" class.</li>
+        <img src="images/additioninh.png"></a>
+        <li>As seen above, the Calculations history class creates an Addition object which will contains the methods to do the actual calculation. Thus reliving the programmer from repetitively writing the method to add numbers.</li>
+        <li>Polymorphism is the principle of defining a method that contains different functionalities depending on the data or signature that are passed.</li>
+        <img src="images/poly1.png"></a>
+        <img src="images/poly2.png"></a>
+        <li>As seen above, many of python's built in functions contain polymorphism. The one above appends a float to a list while the other appends an Addition calculation class object to a list.</li>
+        <li>Abstraction is the principle of defining a method hides its higher level implementation. The users only interact with the basic implementation of the function. A user should see what a function does without knowing how it does it.</li>
+        <img src="images/add2.png"></a>
+        <img src="images/add.png"></a>
+        <li>As seen above, the testing class calls upon the addition method. It expresses this by calling add_number which is clear to a reader. If we were to see how it is implemented we would have to go into the Addition class to see its high level implementation.</li>
+
     </ul>
     </div>
   </div>
